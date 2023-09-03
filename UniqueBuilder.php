@@ -42,7 +42,7 @@ class UniqueBuilder
     {
         $uniqueKey = array_search($optionId, $this->cache);
         if ($uniqueKey !== false) {
-            return $uniqueKey;
+            return (string) $uniqueKey;
         }
 
         // @codingStandardsIgnoreLine
@@ -63,7 +63,7 @@ class UniqueBuilder
 
         $this->cache[$unique] = $optionId;
 
-        return $unique;
+        return (string) $unique;
     }
 
     public function clear(): void
